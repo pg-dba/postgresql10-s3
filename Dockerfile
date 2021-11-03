@@ -3,8 +3,12 @@ FROM postgres:10
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
+RUN apt-get -y install apt-utils iputils-ping
 RUN apt-get -y install perl postgresql-plperl-10
-RUN apt-get -y install barman-cli awscli gosu
+RUN apt-get -y install awscli gosu
+RUN apt-get update
+#RUN apt-get -y install barman-cli-cloud
+RUN apt-get -y install barman-cli
 
 RUN apt-get clean all
 
