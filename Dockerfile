@@ -13,13 +13,7 @@ RUN apt-get -y install barman-cli
 
 RUN apt-get clean all
 
+COPY archive_wal.sh /var/lib/postgresql/data/archive_wal.sh
+RUN chown postgres:postgres /var/lib/postgresql/data/archive_wal.sh && chmod 700 /var/lib/postgresql/data/archive_wal.sh
+
 WORKDIR /var/lib/postgresql
-
-COPY minio-entrypoint.sh /minio-entrypoint.sh
-RUN chmod 700 /minio-entrypoint.sh
-
-COPY archive_wal.sh /archive_wal.sh
-
-ENTRYPOINT ["/minio-entrypoint.sh"]
-
-CMD ["postgres"]
