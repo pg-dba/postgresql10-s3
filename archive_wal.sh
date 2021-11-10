@@ -23,7 +23,7 @@ exec 2>>${LOG_DBG_FILE}
 fi
 
 if [[ ${LOG} -eq 1 ]]; then
-echo "$(date +'[%Y-%m-%d %H:%M:%S]') ^ $1 ^ $2 ^ ${AWS_PROFILE_MINIO} ^ ${MINIO_ENDPOINT_URL}" >> ${LOG_FILE}
+echo "$(date +'[%Y-%m-%d %H:%M:%S]') ^ $1 ^ $2 ^ ${PGSERVER} ^ ${MINIO_ENDPOINT_URL}" >> ${LOG_FILE}
 fi
 
 if [[ ${ARCHIVE} -eq 1 ]];
