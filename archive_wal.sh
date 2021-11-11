@@ -17,13 +17,13 @@ LOG_FILE='/tmp/archive_wal-5432.log'
 LOG_DBG_FILE='/tmp/archive_wal-5432-debug.log'
 
 if [[ ${DEBUG} -eq 1 ]]; then
-echo "$(date +'[%Y-%m-%d %H:%M:%S]')" >> ${LOG_DBG_FILE}
+echo "$(date +'[%Y-%m-%d %H:%M:%S %z]')" >> ${LOG_DBG_FILE}
 set -x
 exec 2>>${LOG_DBG_FILE}
 fi
 
 if [[ ${LOG} -eq 1 ]]; then
-echo "$(date +'[%Y-%m-%d %H:%M:%S]') ^ $1 ^ $2 ^ ${PGSERVER} ^ ${MINIO_ENDPOINT_URL}" >> ${LOG_FILE}
+echo "$(date +'[%Y-%m-%d %H:%M:%S %z]') ^ $1 ^ $2 ^ ${PGSERVER} ^ ${MINIO_ENDPOINT_URL} ^ ${MINIO_BACKET}" >> ${LOG_FILE}
 fi
 
 if [[ ${ARCHIVE} -eq 1 ]];
