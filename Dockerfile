@@ -16,9 +16,10 @@ RUN apt-get -y install barman-cli
 
 RUN apt-get clean all
 
-# /var/lib/postgresql/data not exists, postgres user not exists
+# before init - /var/lib/postgresql/data not exists, postgres user not exists
 #COPY archive_wal.sh /var/lib/postgresql/data/archive_wal.sh
 #RUN chown postgres:postgres /tmp/archive_wal.sh && chmod 700 /tmp/archive_wal.sh
-COPY archive_wal.sh /tmp/archive_wal.sh
+RUN mkdir -p /home/postgres
+COPY archive_wal.sh /home/postgres/archive_wal.sh
 
 WORKDIR /var/lib/postgresql
