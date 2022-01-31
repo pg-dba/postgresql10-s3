@@ -36,3 +36,4 @@ https://en.wikipedia.org/wiki/List_of_tz_database_time_zones<BR>
 <TR><TD>AWS_ACCESS_KEY_ID</TD><TD>minioadmin</TD></TR>
 <TR><TD>AWS_SECRET_ACCESS_KEY</TD><TD>P@ssw0rd</TD></TR>
 </TABLE>
+ 
