@@ -1,7 +1,5 @@
 FROM postgres:10
 
-ENV DEBIAN_FRONTEND noninteractive
-
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get update && \
     apt-get -y install apt-utils lsb-release && \
     apt-get -y install gnupg2 wget iputils-ping dnsutils && \
